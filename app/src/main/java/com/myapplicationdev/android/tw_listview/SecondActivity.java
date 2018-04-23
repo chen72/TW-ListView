@@ -18,9 +18,8 @@ public class SecondActivity extends AppCompatActivity {
 
     ListView lv;
     TextView tvYear;
+    ArrayAdapter aa;
     ArrayList<Module> module;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +42,11 @@ public class SecondActivity extends AppCompatActivity {
             module.add(new Module("C346", true));
         }
 
+        aa = new ModuleAdapter(this, R.layout.activity_row, module);
+        lv.setAdapter(aa);
         tvYear.setText(year);
 
-
-
+        /**
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -58,7 +58,9 @@ public class SecondActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
         });
+         **/
 
     }
+
 
 }
