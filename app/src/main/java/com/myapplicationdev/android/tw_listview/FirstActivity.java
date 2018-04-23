@@ -21,8 +21,16 @@ public class FirstActivity extends AppCompatActivity {
 
         al = new ArrayList<String>();
         al.add("Year 1");
+        al.add("Year 2");
+        al.add("Year 3");
+
+        aa = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, al);
 
 
+        lv = (ListView)findViewById(R.id.lvYear);
+
+        lv.setAdapter(aa);
 
 
 
